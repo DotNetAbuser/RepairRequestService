@@ -1,0 +1,15 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Core.Entities;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Core.Enums;
+global using Core.IHelpers;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Configuration;
+global using Shared.Wrapper;
+global using Shared.Responses.Identity;
+global using System.ComponentModel.DataAnnotations;
+global using Shared.Requests.Identity;
+global using Shared.Responses;
+global using Shared.Responses.Repairs;
+global using Shared.Requests.Repairs;
+global using Microsoft.AspNetCore.Http;

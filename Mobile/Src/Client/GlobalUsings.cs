@@ -1,0 +1,25 @@
+﻿global using CommunityToolkit.Maui;
+global using Microsoft.Extensions.Logging;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using Client.Enums;
+global using Client.Services;
+global using Client.Infrastructure.Handlers;
+global using Client.ViewModels;
+global using Client.Views;
+global using Client.Infrastructure.Extensions;
+global using Client.Infrastructure.IServices;
+global using Client.Extensions;
+global using Client.Infrastructure.Managers.TokenManager;
+global using CommunityToolkit.Mvvm.Input;
+global using Shared.Requests.Identity;
+global using System.Globalization;
+global using Client.Infrastructure.Managers.AccountManager;
+global using System.Collections.ObjectModel;
+global using Shared.Responses.Repairs;
+global using Client.Infrastructure.Managers.RequestManager;
+global using Client.Infrastructure.Managers.EquipmentTypeManager;
+global using Client.Infrastructure.Managers.ProblemTypeManager;
+global using Shared.Requests.Repairs;
+global using The49.Maui.BottomSheet;
+global using Client.Infrastructure.Managers.RepairStatusManager;
+

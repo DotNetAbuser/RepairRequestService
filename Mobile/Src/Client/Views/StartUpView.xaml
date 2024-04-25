@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    Shell.NavBarIsVisible="False"
+    x:Class="Client.Views.StartUpView"
+    x:DataType="vm:StartUpVM"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:Client.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingViewCommand}" EventName="Appearing" />
+        <toolkit:EventToCommandBehavior Command="{Binding DisappearingViewCommand}" EventName="Disappearing" />
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <VerticalStackLayout Spacing="20" VerticalOptions="Center">
+            <Image HeightRequest="120" Source="logo.svg">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" />
+                </Image.Behaviors>
+            </Image>
+            <ActivityIndicator IsRunning="True" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

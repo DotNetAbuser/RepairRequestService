@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    Shell.TabBarIsVisible="False"
+    x:Class="Client.Views.CreateRequestView"
+    x:DataType="vm:CreateRequestVM"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:customControls="clr-namespace:Client.CustomControls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:Client.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingViewCommand}" EventName="Appearing" />
+        <toolkit:EventToCommandBehavior Command="{Binding DisappearingViewCommand}" EventName="Disappearing" />
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto, *">
+            <ActivityIndicator
+                Grid.Row="0"
+                IsRunning="True"
+                IsVisible="{Binding IsBusy}" />
+
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout
+                    HorizontalOptions="Center"
+                    Padding="20,0,20,0"
+                    Spacing="15"
+                    VerticalOptions="Center">
+
+                    <VerticalStackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="30"
+                            HorizontalTextAlignment="Center"
+                            Text="Отправить заявку на ремонт" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="10">
+                        <customControls:CustomPicker
+                            ImageSource="equipment_type.svg"
+                            ItemSource="{Binding EquipmentTypesList}"
+                            OnSelectedItemCommand="{Binding EquipmentTypeChangedCommand}"
+                            Placeholder="Выберите тип оборудования"
+                            SelectedItem="{Binding SelectedEquipmentType}">
+                            <customControls:CustomPicker.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding EquipmentTypesList.Count}"
+                                    TargetType="Border"
+                                    Value="0">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </customControls:CustomPicker.Triggers>
+                        </customControls:CustomPicker>
+                        <customControls:CustomPicker
+                            ImageSource="problem_type.svg"
+                            ItemSource="{Binding ProblemTypesList}"
+                            Placeholder="Выберите тип проблемы"
+                            SelectedItem="{Binding SelectedProblemType}">
+                            <customControls:CustomPicker.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding ProblemTypesList.Count}"
+                                    TargetType="Border"
+                                    Value="0">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </customControls:CustomPicker.Triggers>
+                        </customControls:CustomPicker>
+                        <customControls:CustomEditor
+                            ImageSource="problem_description.svg"
+                            Placeholder="Опишите проблему"
+                            Text="{Binding ProblemDescription}" />
+                    </VerticalStackLayout>
+                    <Button
+                        Command="{Binding CreateRequestCommand}"
+                        Style="{StaticResource Button1}"
+                        Text="Отправить" />
+                    <VerticalStackLayout />
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

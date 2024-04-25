@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    Shell.NavBarIsVisible="True"
+    x:Class="Client.Views.ProfileView"
+    x:DataType="vm:ProfileVM"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:converters="clr-namespace:Client.Converters"
+    xmlns:customControls="clr-namespace:Client.CustomControls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:Client.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <toolkit:InvertedBoolConverter x:Key="cnvInvertedBoolConverter" />
+        <converters:FirstNameToFirstCharConverter x:Key="cnvFirstNameToFirstCharConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingViewCommand}" EventName="Appearing" />
+        <toolkit:EventToCommandBehavior Command="{Binding DisappearingViewCommand}" EventName="Disappearing" />
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <RefreshView Command="{Binding RefreshDataCommand}" IsRefreshing="{Binding IsBusy}">
+            <ScrollView>
+                <VerticalStackLayout Padding="20" Spacing="20">
+
+                    <Border
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Black},
+                                                          Dark={StaticResource Tertiary}}"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        StrokeThickness="0">
+
+                        <Grid
+                            ColumnDefinitions="75, *, 30"
+                            ColumnSpacing="10"
+                            Padding="12">
+                            <Border
+                                Grid.Column="0"
+                                HeightRequest="75"
+                                Stroke="{StaticResource White}"
+                                StrokeShape="RoundRectangle 50,50,50,50"
+                                StrokeThickness="2"
+                                WidthRequest="75">
+                                <Grid VerticalOptions="Center">
+                                    <ActivityIndicator
+                                        Color="{StaticResource White}"
+                                        IsRunning="True"
+                                        IsVisible="{Binding IsBusy}" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="30"
+                                        HorizontalOptions="Center"
+                                        IsVisible="{Binding IsBusy, Converter={StaticResource cnvInvertedBoolConverter}}"
+                                        Text="{Binding FirstName, Converter={StaticResource cnvFirstNameToFirstCharConverter}}"
+                                        TextColor="{StaticResource White}"
+                                        VerticalOptions="Center" />
+                                </Grid>
+
+                            </Border>
+
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                <HorizontalStackLayout Spacing="3">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="12"
+                                        Text="{Binding LastName}"
+                                        TextColor="{StaticResource White}" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="12"
+                                        Text="{Binding FirstName}"
+                                        TextColor="{StaticResource White}" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="12"
+                                        Text="{Binding MiddleName}"
+                                        TextColor="{StaticResource White}" />
+                                </HorizontalStackLayout>
+                                <Label
+                                    FontSize="12"
+                                    Text="{Binding Email}"
+                                    TextColor="{StaticResource White}" />
+                            </VerticalStackLayout>
+
+                            <ImageButton
+                                Command="{Binding GoToUpdateProfileViewCommand}"
+                                Grid.Column="2"
+                                HeightRequest="20"
+                                Source="editing.svg"
+                                WidthRequest="20">
+                                <ImageButton.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource White}" />
+                                </ImageButton.Behaviors>
+                            </ImageButton>
+                        </Grid>
+                    </Border>
+
+                    <Border
+                        BackgroundColor="{AppThemeBinding Light={StaticResource White},
+                                                          Dark={StaticResource SecondaryDarkText}}"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        StrokeThickness="0">
+                        <VerticalStackLayout>
+                            <customControls:CustomProfileButton
+                                ButtonCommand="{Binding GoToChangePasswordViewCommand}"
+                                ButtonTitle="Сменить пароль"
+                                ButtonTitleSecondory="Смена пароля учётной записи."
+                                ImageActionSource="lock.svg" />
+
+                            <customControls:CustomProfileButton
+                                ButtonCommand="{Binding GoToRefreshSessionsViewCommand}"
+                                ButtonTitle="Активные сессии"
+                                ButtonTitleSecondory="Устройства с активными сессиями"
+                                ImageActionSource="active_sessions.svg" />
+
+                            <customControls:CustomProfileButton
+                                ButtonCommand="{Binding SignOutCommand}"
+                                ButtonTitle="Выйти"
+                                ButtonTitleSecondory="Выход из текущей учетной записи."
+                                ImageActionSource="signout.svg" />
+                        </VerticalStackLayout>
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="{AppThemeBinding Light={StaticResource Gray100},
+                                                        Dark={StaticResource TertiaryBrush}}"
+                                Offset="10,10"
+                                Opacity="0.2"
+                                Radius="20" />
+                        </Border.Shadow>
+                    </Border>
+
+                    <Label FontAttributes="Bold" Text="Другое" />
+
+                    <Border
+                        BackgroundColor="{AppThemeBinding Light={StaticResource White},
+                                                          Dark={StaticResource SecondaryDarkText}}"
+                        StrokeShape="RoundRectangle 5,5,5,5"
+                        StrokeThickness="0">
+                        <VerticalStackLayout>
+                            <customControls:CustomProfileButton
+                                ButtonCommand="{Binding GoToSupportViewCommand}"
+                                ButtonTitle="FAQ и помощь"
+                                ImageActionSource="support.svg" />
+                            <customControls:CustomProfileButton
+                                ButtonCommand="{Binding GoToAboutAppViewCommand}"
+                                ButtonTitle="О приложение"
+                                ImageActionSource="about_app.svg" />
+                        </VerticalStackLayout>
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="{AppThemeBinding Light={StaticResource Gray100},
+                                                        Dark={StaticResource TertiaryBrush}}"
+                                Offset="10,10"
+                                Opacity="0.2"
+                                Radius="20" />
+                        </Border.Shadow>
+                    </Border>
+                </VerticalStackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    Shell.FlyoutBehavior="Disabled"
+    Shell.TabBarIsVisible="False"
+    Title="Mobile"
+    x:Class="Client.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:views="clr-namespace:Client.Views"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}" StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
+    </ContentPage.Behaviors>
+
+    <ShellContent
+        ContentTemplate="{DataTemplate views:StartUpView}"
+        Route="StartUpView"
+        Title="StartUpView" />
+
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SignInView}"
+        Route="SignInView"
+        Title="SignInView" />
+
+    <TabBar Shell.NavBarIsVisible="True" Shell.TabBarIsVisible="True">
+        <Tab Icon="home.svg" Route="HomeGuest">
+            <ShellContent ContentTemplate="{DataTemplate views:HomeView}" Title="Главная" />
+        </Tab>
+        <Tab Icon="my_requests.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:RequestsView}" Title="Мои заявки" />
+        </Tab>
+        <Tab Icon="profile.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:ProfileView}" Title="Профиль" />
+        </Tab>
+    </TabBar>
+
+</Shell>

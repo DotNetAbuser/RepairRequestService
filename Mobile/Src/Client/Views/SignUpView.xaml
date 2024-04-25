@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="Client.Views.SignUpView"
+    x:DataType="vm:SignUpVM"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:customControls="clr-namespace:Client.CustomControls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:Client.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingViewCommand}" EventName="Appearing" />
+        <toolkit:EventToCommandBehavior Command="{Binding DisappearingViewCommand}" EventName="Disappearing" />
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto, *">
+            <ActivityIndicator
+                Grid.Row="0"
+                IsRunning="True"
+                IsVisible="{Binding IsBusy}" />
+
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout
+                    Padding="20,0,20,0"
+                    Spacing="20"
+                    VerticalOptions="Center">
+                    <VerticalStackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="34"
+                            Text="Регистрация" />
+                    </VerticalStackLayout>
+
+
+                    <VerticalStackLayout Spacing="10">
+                        <customControls:CustomEntryText
+                            ImageSource="user.svg"
+                            Placeholder="Фамилия"
+                            Text="{Binding LastName}" />
+                        <customControls:CustomEntryText
+                            ImageSource="user.svg"
+                            Placeholder="Имя"
+                            Text="{Binding FirstName}" />
+                        <customControls:CustomEntryText
+                            ImageSource="user.svg"
+                            Placeholder="Отчество (при наличие)"
+                            Text="{Binding MiddleName}" />
+
+                        <customControls:CustomEntryText
+                            ImageSource="mail.svg"
+                            Placeholder="Почта"
+                            Text="{Binding Email}" />
+
+                        <customControls:CustomEntryPassword
+                            ImageSource="lock.svg"
+                            Placeholder="Пароль"
+                            Text="{Binding Password}" />
+                        <Grid ColumnDefinitions="50, *" HorizontalOptions="Center">
+                            <CheckBox IsChecked="{Binding AgreeTerms}" />
+                            <Label
+                                Grid.Column="1"
+                                HorizontalOptions="Center"
+                                Text="Согласен с политикой обработки персональных данных."
+                                VerticalOptions="Center" />
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeAgreeTermsCommand}" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </VerticalStackLayout>
+
+
+
+
+                    <Button
+                        Command="{Binding SignUpCommand}"
+                        Style="{StaticResource Button1}"
+                        Text="Зарегистрироваться" />
+                </VerticalStackLayout>
+
+
+            </ScrollView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

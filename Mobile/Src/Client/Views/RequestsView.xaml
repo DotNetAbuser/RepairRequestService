@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    Shell.NavBarIsVisible="True"
+    x:Class="Client.Views.RequestsView"
+    x:DataType="vm:RequestsVM"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:converters="clr-namespace:Client.Converters"
+    xmlns:model="clr-namespace:Shared.Responses.Repairs;assembly=Shared"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:Client.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <toolkit:InvertedBoolConverter x:Key="cnvInvertedBoolConverter" />
+        <converters:DateTimeToStringConverter x:Key="cnvDateTimeConverter" />
+        <converters:FirstNameToFirstCharConverter x:Key="cnvFirstNameToFirstCharConverter" />
+        <DataTemplate x:DataType="model:RepairResponse" x:Key="userTemplate">
+            <Border
+                BackgroundColor="{AppThemeBinding Light={StaticResource Black},
+                                                  Dark={StaticResource Tertiary}}"
+                Margin="0,10,0,0"
+                Padding="15"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                StrokeThickness="0">
+                <VerticalStackLayout Spacing="5">
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="{Binding Created, Converter={StaticResource cnvDateTimeConverter}}" TextColor="{StaticResource White}" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <Label Text="Тип оборудования: " TextColor="{StaticResource White}" />
+                        <Label Text="{Binding EquipmentType}" TextColor="{StaticResource White}" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <Label Text="Тип проблемы: " TextColor="{StaticResource White}" />
+                        <Label Text="{Binding ProblemType}" TextColor="{StaticResource White}" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Статус: "
+                            TextColor="{StaticResource White}" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="{Binding RepairStatus}"
+                            TextColor="{StaticResource White}" />
+
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RequestsVM}}, Path=GoToRequestDetailsViewCommand}" CommandParameter="{Binding .}" />
+                </Border.GestureRecognizers>
+            </Border>
+
+        </DataTemplate>
+
+        <DataTemplate x:DataType="model:RepairResponse" x:Key="adminTemplate">
+            <Border
+                BackgroundColor="{AppThemeBinding Light={StaticResource Black},
+                                                  Dark={StaticResource Tertiary}}"
+                Margin="0,10,0,0"
+                Padding="15"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                StrokeThickness="0">
+                <VerticalStackLayout Spacing="5">
+                    <HorizontalStackLayout Spacing="20">
+                        <Border
+                            HeightRequest="75"
+                            Stroke="{StaticResource White}"
+                            StrokeShape="RoundRectangle 50,50,50,50"
+                            StrokeThickness="2"
+                            WidthRequest="75">
+                            <Grid VerticalOptions="Center">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="30"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding FirstName, Converter={StaticResource cnvFirstNameToFirstCharConverter}}"
+                                    TextColor="{StaticResource White}"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                        </Border>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <HorizontalStackLayout Spacing="3">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="12"
+                                    Text="{Binding LastName}"
+                                    TextColor="{StaticResource White}" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="12"
+                                    Text="{Binding FirstName}"
+                                    TextColor="{StaticResource White}" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="12"
+                                    Text="{Binding MiddleName}"
+                                    TextColor="{StaticResource White}" />
+                            </HorizontalStackLayout>
+                            <Label
+                                FontSize="12"
+                                Text="{Binding Email}"
+                                TextColor="{StaticResource White}" />
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="{Binding Created, Converter={StaticResource cnvDateTimeConverter}}" TextColor="{StaticResource White}" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <Label Text="Тип оборудования: " TextColor="{StaticResource White}" />
+                        <Label Text="{Binding EquipmentType}" TextColor="{StaticResource White}" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <Label Text="Тип проблемы: " TextColor="{StaticResource White}" />
+                        <Label Text="{Binding ProblemType}" TextColor="{StaticResource White}" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Статус: "
+                            TextColor="{StaticResource White}" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="{Binding RepairStatus}"
+                            TextColor="{StaticResource White}" />
+
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RequestsVM}}, Path=GoToRequestDetailsViewCommand}" CommandParameter="{Binding .}" />
+                </Border.GestureRecognizers>
+            </Border>
+
+        </DataTemplate>
+
+    </ContentPage.Resources>
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="*,*">
+            <Label
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Grid.Column="0"
+                Text="Мои заявки"
+                VerticalOptions="Center" />
+            <Border
+                BackgroundColor="{AppThemeBinding Light={StaticResource Black},
+                                                  Dark={StaticResource Tertiary}}"
+                Grid.Column="1"
+                HeightRequest="49"
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsAdmin, Converter={StaticResource cnvInvertedBoolConverter}}"
+                Padding="10"
+                Stroke="{AppThemeBinding Light={StaticResource Black},
+                                         Dark={StaticResource Tertiary}}"
+                StrokeShape="RoundRectangle 20">
+                <HorizontalStackLayout Spacing="5">
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Создать заявку"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Center" />
+                    <Image
+                        HeightRequest="28"
+                        Source="create_request.svg"
+                        WidthRequest="28">
+                        <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="{StaticResource White}" />
+                        </Image.Behaviors>
+                    </Image>
+                </HorizontalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToCreateRequestViewCommand}" />
+                </Border.GestureRecognizers>
+            </Border>
+        </Grid>
+    </Shell.TitleView>
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingViewCommand}" EventName="Appearing" />
+        <toolkit:EventToCommandBehavior Command="{Binding DisappearingViewCommand}" EventName="Disappearing" />
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <RefreshView Command="{Binding RefreshDataCommand}" IsRefreshing="{Binding IsBusy}">
+            <Grid
+                Padding="20"
+                RowDefinitions="auto, *"
+                RowSpacing="10">
+
+                <Grid ColumnSpacing="40" RowDefinitions="*">
+                    <VerticalStackLayout>
+                        <Border HorizontalOptions="End" StrokeShape="RoundRectangle 20,20,20,20">
+                            <Grid RowDefinitions="*">
+                                <SearchBar
+                                    Placeholder="Поиск"
+                                    SearchCommand="{Binding SearchDataCommand}"
+                                    Text="{Binding SearchTerms}" />
+                            </Grid>
+                        </Border>
+
+                        <Grid ColumnDefinitions="*,*">
+                            <Label
+                                FontSize="18"
+                                Padding="10"
+                                Text="Дата создания"
+                                VerticalOptions="Center" />
+                            <Image
+                                Grid.Column="1"
+                                HeightRequest="40"
+                                HorizontalOptions="End"
+                                Source="sort_down.svg"
+                                VerticalOptions="Center"
+                                WidthRequest="40">
+                                <Image.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding OrderBy}"
+                                        TargetType="Image"
+                                        Value="asc">
+                                        <Setter Property="Source" Value="sort_up.svg" />
+                                    </DataTrigger>
+                                </Image.Triggers>
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ChangeOrderByCommand}" />
+                                </Image.GestureRecognizers>
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                                </Image.Behaviors>
+                            </Image>
+                        </Grid>
+                        <Line
+                            Stroke="{AppThemeBinding Light={StaticResource Black},
+                                                     Dark={StaticResource White}}"
+                            StrokeDashOffset="6"
+                            X1="0"
+                            X2="1000"
+                            Y1="0"
+                            Y2="0" />
+                    </VerticalStackLayout>
+                </Grid>
+                <CollectionView
+                    Grid.Row="1"
+                    ItemTemplate="{StaticResource userTemplate}"
+                    ItemsSource="{Binding RepairResponseList}"
+                    RemainingItemsThreshold="1"
+                    RemainingItemsThresholdReachedCommand="{Binding GetNextDataCommand}"
+                    VerticalOptions="FillAndExpand">
+                    <CollectionView.Header>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label FontSize="20" Text="Колво заявок: " />
+                                <Label FontSize="20" Text="{Binding TotalCount}" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </CollectionView.Header>
+
+                    <CollectionView.Footer>
+                        <VerticalStackLayout>
+                            <ActivityIndicator
+                                HeightRequest="40"
+                                HorizontalOptions="Center"
+                                IsRunning="True"
+                                IsVisible="{Binding IsFooterLoading}"
+                                WidthRequest="40" />
+                        </VerticalStackLayout>
+                    </CollectionView.Footer>
+                    <CollectionView.Triggers>
+                        <DataTrigger
+                            Binding="{Binding IsAdmin}"
+                            TargetType="CollectionView"
+                            Value="True">
+                            <Setter Property="ItemTemplate" Value="{StaticResource adminTemplate}" />
+                        </DataTrigger>
+                    </CollectionView.Triggers>
+                </CollectionView>
+            </Grid>
+        </RefreshView>
+
+
+    </ContentPage.Content>
+</ContentPage>

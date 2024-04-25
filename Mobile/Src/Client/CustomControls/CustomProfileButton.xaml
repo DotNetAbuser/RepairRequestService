@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Border
+    HeightRequest="80"
+    StrokeThickness="0"
+    x:Class="Client.CustomControls.CustomProfileButton"
+    x:Name="this"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid
+        ColumnDefinitions="50, * , 30"
+        ColumnSpacing="10"
+        Padding="5">
+        <Border
+            BackgroundColor="{AppThemeBinding Light={StaticResource Gray100},
+                                              Dark={StaticResource Gray900}}"
+            HeightRequest="40"
+            StrokeShape="RoundRectangle 20"
+            StrokeThickness="0"
+            WidthRequest="40">
+            <Image
+                HeightRequest="30"
+                Source="{Binding Source={x:Reference this}, Path=ImageActionSource}"
+                WidthRequest="30">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                </Image.Behaviors>
+            </Image>
+        </Border>
+
+        <VerticalStackLayout
+            Grid.Column="1"
+            Spacing="2"
+            VerticalOptions="Center">
+            <Label
+                FontAttributes="Bold"
+                FontSize="16"
+                Text="{Binding Source={x:Reference this}, Path=ButtonTitle}" />
+            <Label FontSize="12" Text="{Binding Source={x:Reference this}, Path=ButtonTitleSecondory}">
+                <Label.Triggers>
+                    <DataTrigger
+                        Binding="{Binding Source={x:Reference this}, Path=ButtonTitleSecondory}"
+                        TargetType="Label"
+                        Value="Empty">
+                        <Setter Property="IsVisible" Value="False" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+        </VerticalStackLayout>
+
+        <Image Grid.Column="2" Source="right.svg">
+            <Image.Behaviors>
+                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource White}}" />
+            </Image.Behaviors>
+        </Image>
+
+    </Grid>
+    <Border.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=ButtonCommand}" />
+    </Border.GestureRecognizers>
+</Border>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    Shell.NavBarIsVisible="True"
+    Shell.TabBarIsVisible="True"
+    x:Class="Client.Views.HomeView"
+    x:DataType="vm:HomeVM"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:Client.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingViewCommand}" EventName="Appearing" />
+        <toolkit:EventToCommandBehavior Command="{Binding DisappearingViewCommand}" EventName="Disappearing" />
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <VerticalStackLayout VerticalOptions="Center">
+            <Label
+                FontAttributes="Bold"
+                FontSize="32"
+                HorizontalOptions="Center"
+                Text="Главная страница" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

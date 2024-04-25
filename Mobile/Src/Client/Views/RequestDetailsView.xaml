@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    Shell.TabBarIsVisible="False"
+    x:Class="Client.Views.RequestDetailsView"
+    x:DataType="vm:RequestDetailsVM"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:converters="clr-namespace:Client.Converters"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:Client.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <converters:DateTimeToStringConverter x:Key="cnvDateTimeConverter" />
+        <converters:FirstNameToFirstCharConverter x:Key="cnvFirstNameToFirstCharConverter" />
+        <toolkit:InvertedBoolConverter x:Key="cnvInvertedBoolConverter" />
+
+    </ContentPage.Resources>
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingViewCommand}" EventName="Appearing" />
+        <toolkit:EventToCommandBehavior Command="{Binding DisappearingViewCommand}" EventName="Disappearing" />
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+
+        <RefreshView Command="{Binding RefreshDataCommand}" IsRefreshing="{Binding IsBusy}">
+            <ScrollView>
+                <VerticalStackLayout Padding="20,0,20,0" Spacing="20">
+                    <VerticalStackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="32"
+                            Text="О заявке" />
+                        <Label FontSize="12" Text="{Binding RequestId}" />
+                    </VerticalStackLayout>
+
+
+                    <VerticalStackLayout Spacing="15">
+
+                        <HorizontalStackLayout IsVisible="{Binding IsAdmin}" Spacing="20">
+                            <Border
+                                HeightRequest="75"
+                                Stroke="{AppThemeBinding Light={StaticResource Black},
+                                                         Dark={StaticResource White}}"
+                                StrokeShape="RoundRectangle 50,50,50,50"
+                                StrokeThickness="2"
+                                WidthRequest="75">
+                                <Grid VerticalOptions="Center">
+                                    <ActivityIndicator
+                                        Color="{AppThemeBinding Light={StaticResource Black},
+                                                                Dark={StaticResource White}}"
+                                        IsRunning="True"
+                                        IsVisible="{Binding IsBusy}" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="30"
+                                        HorizontalOptions="Center"
+                                        IsVisible="{Binding IsBusy, Converter={StaticResource cnvInvertedBoolConverter}}"
+                                        Text="{Binding FirstName, Converter={StaticResource cnvFirstNameToFirstCharConverter}}"
+                                        TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                                    Dark={StaticResource White}}"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Border>
+                            <VerticalStackLayout VerticalOptions="Center">
+                                <HorizontalStackLayout Spacing="3">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="12"
+                                        Text="{Binding LastName}"
+                                        TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                                    Dark={StaticResource White}}" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="12"
+                                        Text="{Binding FirstName}"
+                                        TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                                    Dark={StaticResource White}}" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="12"
+                                        Text="{Binding MiddleName}"
+                                        TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                                    Dark={StaticResource White}}" />
+                                </HorizontalStackLayout>
+                                <Label
+                                    FontSize="12"
+                                    Text="{Binding Email}"
+                                    TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                                Dark={StaticResource White}}" />
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+
+                        <VerticalStackLayout>
+                            <Label
+                                FontSize="12"
+                                Text="Дата создания"
+                                TextColor="{AppThemeBinding Light={StaticResource Gray500},
+                                                            Dark={StaticResource Gray200}}" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="{Binding Created, Converter={StaticResource cnvDateTimeConverter}}" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout>
+                            <Label
+                                FontSize="12"
+                                Text="Статус заявки"
+                                TextColor="{AppThemeBinding Light={StaticResource Gray500},
+                                                            Dark={StaticResource Gray200}}" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="{Binding RepairStatus}" />
+                        </VerticalStackLayout>
+
+                        <Grid ColumnDefinitions="*, *" ColumnSpacing="10">
+                            <VerticalStackLayout Grid.Column="0">
+                                <Label
+                                    FontSize="12"
+                                    Text="Тип оборудования"
+                                    TextColor="{AppThemeBinding Light={StaticResource Gray500},
+                                                                Dark={StaticResource Gray200}}" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="{Binding EquipmentType}" />
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label
+                                    FontSize="12"
+                                    Text="Тип проблемы"
+                                    TextColor="{AppThemeBinding Light={StaticResource Gray500},
+                                                                Dark={StaticResource Gray200}}" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="{Binding ProblemType}" />
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <VerticalStackLayout>
+                            <Label
+                                FontSize="12"
+                                Text="Описание проблемы"
+                                TextColor="{AppThemeBinding Light={StaticResource Gray500},
+                                                            Dark={StaticResource Gray200}}" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="{Binding ProblemDescription}" />
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                    <VerticalStackLayout IsVisible="{Binding IsEditable}" Spacing="10">
+                        <Button
+                            Command="{Binding GoToEditRequestViewCommand}"
+                            Style="{StaticResource Button1}"
+                            Text="Редактировать заявку" />
+                        <Button
+                            Command="{Binding CancelRequestCommand}"
+                            Style="{StaticResource Button2}"
+                            Text="Отменить заявку" />
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </RefreshView>
+
+    </ContentPage.Content>
+</ContentPage>
