@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj": {}
+    "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
+    "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
         "projectName": "Client.Infrastructure",
-        "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\ilyao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Mobile\\Src\\Client.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Mobile\\Src\\Client.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Shared\\Src\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Shared\\Src\\Shared\\Shared.csproj"
+              "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Shared\\Src\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Shared\\Src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -98,18 +98,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Shared\\Src\\Shared\\Shared.csproj": {
+    "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Shared\\Src\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Shared\\Src\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Shared\\Src\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Shared\\Src\\Shared\\Shared.csproj",
+        "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Shared\\Src\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\ilyao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Shared\\Src\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Shared\\Src\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -158,7 +158,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

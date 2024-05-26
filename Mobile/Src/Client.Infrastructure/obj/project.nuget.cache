@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1fSWQ6KPiZIcMx0H81SUb9p2W5TjxpXV3OfeLFmQ9TBSu0eYb7mfJRuR+KEczl2oPWeCpJix0s8PI/cFrjlnew==",
+  "dgSpecHash": "FBI/ebVe44gVQqNYsh8FFkrOa+1FgdIcq1pe6v2d0rzvwNI3kbk8GoRgDi85cmpj4fXXZi1Fqj14/IkZGKyQwA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequest\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\RepairRequestService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyao\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
     "C:\\Users\\ilyao\\.nuget\\packages\\blazored.sessionstorage\\2.4.0\\blazored.sessionstorage.2.4.0.nupkg.sha512",

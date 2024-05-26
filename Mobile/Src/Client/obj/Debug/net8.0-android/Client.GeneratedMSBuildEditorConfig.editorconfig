@@ -12,131 +12,131 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Client
-build_property.ProjectDir = C:\Users\ilyao\Desktop\Projects\RepairRequest\Mobile\Src\Client\
+build_property.ProjectDir = C:\Users\ilyao\Desktop\Projects\RepairRequestService\Mobile\Src\Client\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/App.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/AppShell.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/CustomControls/CustomEditor.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/CustomControls/CustomEditor.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.CustomControls.CustomEditor.xaml
 build_metadata.AdditionalFiles.TargetPath = CustomControls\CustomEditor.xaml
 build_metadata.AdditionalFiles.RelativePath = CustomControls\CustomEditor.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/CustomControls/CustomEntryPassword.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/CustomControls/CustomEntryPassword.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.CustomControls.CustomEntryPassword.xaml
 build_metadata.AdditionalFiles.TargetPath = CustomControls\CustomEntryPassword.xaml
 build_metadata.AdditionalFiles.RelativePath = CustomControls\CustomEntryPassword.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/CustomControls/CustomEntryText.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/CustomControls/CustomEntryText.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.CustomControls.CustomEntryText.xaml
 build_metadata.AdditionalFiles.TargetPath = CustomControls\CustomEntryText.xaml
 build_metadata.AdditionalFiles.RelativePath = CustomControls\CustomEntryText.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/CustomControls/CustomPicker.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/CustomControls/CustomPicker.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.CustomControls.CustomPicker.xaml
 build_metadata.AdditionalFiles.TargetPath = CustomControls\CustomPicker.xaml
 build_metadata.AdditionalFiles.RelativePath = CustomControls\CustomPicker.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/CustomControls/CustomProfileButton.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/CustomControls/CustomProfileButton.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.CustomControls.CustomProfileButton.xaml
 build_metadata.AdditionalFiles.TargetPath = CustomControls\CustomProfileButton.xaml
 build_metadata.AdditionalFiles.RelativePath = CustomControls\CustomProfileButton.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Resources/Styles/Colors.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Resources/Styles/CustomStyles/Buttons.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Resources/Styles/CustomStyles/Buttons.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Resources.Styles.CustomStyles.Buttons.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\CustomStyles\Buttons.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\CustomStyles\Buttons.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Resources/Styles/Styles.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/ChangePasswordView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/ChangePasswordView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.ChangePasswordView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ChangePasswordView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ChangePasswordView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/CreateRequestView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/CreateRequestView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.CreateRequestView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\CreateRequestView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CreateRequestView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/EditRequestView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/EditRequestView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.EditRequestView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\EditRequestView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\EditRequestView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/HomeView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/HomeView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.HomeView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\HomeView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\HomeView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/ProfileView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/ProfileView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.ProfileView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ProfileView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ProfileView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/RequestDetailsView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/RequestDetailsView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.RequestDetailsView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\RequestDetailsView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\RequestDetailsView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/RequestsView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/RequestsView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.RequestsView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\RequestsView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\RequestsView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/SignInView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/SignInView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.SignInView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SignInView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SignInView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/SignUpView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/SignUpView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.SignUpView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SignUpView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SignUpView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/StartUpView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/StartUpView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.StartUpView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\StartUpView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\StartUpView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/RepairRequest/Mobile/Src/Client/Views/UpdateProfileView.xaml]
+[C:/Users/ilyao/Desktop/Projects/RepairRequestService/Mobile/Src/Client/Views/UpdateProfileView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.UpdateProfileView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\UpdateProfileView.xaml
